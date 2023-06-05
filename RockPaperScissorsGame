@@ -1,0 +1,61 @@
+from getpass import getpass as input
+
+print("🪨 Rock  📄 Paper ✂️ Scissors Game")
+print()
+player1_score = 0
+player2_score = 0
+print("Select your choice(R, P, S)")
+print()
+while True:
+  player1 = input("Player1 Enter your choice: ")
+  print()
+  player2 = input("Player2 Enter your choice: ")
+  print()
+
+  if player1 == "R":
+    if player2 == "R":
+      print("You both picked Rock, its a tie!")
+      
+    elif player2 == "S":
+      print("Rock smashes Scissors, Player1 wins!")
+      player1_score += 1
+      
+    elif player2 == "P":
+      print("We cannot see the Rock Oww its wrapped around the Paper, Player2 wins!!!")
+      player2_score += 1
+      # completes the RR draw
+  
+  elif player1 == "P":
+    if player2 == "R":
+      print("Where is the Rock, Player1 wins!")
+      player1_score += 1
+      
+    elif player2 == "S":
+      print("Player1's Paper is cut into pieces by Player2's Scissors, Player2 wins!")
+      player2_score += 1
+      
+    elif player2 == "P":
+      print("You both chose Paper, its a tie.")
+      # completes the PP draw
+  
+  elif player1 == "S":
+    if player2 == "R":
+      print("A Scissor is no match for a Rock, Player 2 wins!!")
+      player2_score += 1
+      
+    elif player2 == "S":
+      print("You both like cutting things its a tie.")
+      
+    elif player2 == "P":
+      print("We out of Paper because of Scissor, Player1 Wins ")
+      player1_score += 1
+
+    # completes the SS draw 
+    
+  print("Player 1 has", player1_score, "wins.")
+  print("Player 2 has", player2_score, "wins.")
+  if player1_score==3 or player2_score==3:
+    print("Thanks for playing!")
+    exit()
+  else:
+    continue
